@@ -1,0 +1,27 @@
+# Ignore local settings file (contains sensitive information)
+local.settings.json
+
+# Ignore function host configuration (can be generated automatically)
+# Keep this if it's not required to be versioned.
+# host.json
+
+# Maven build directory
+target/
+
+# IDE specific files (IntelliJ IDEA, Eclipse, etc.)
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
+
+# Ignore build artifacts
+*.jar
+*.war
+
+# Node.js dependencies (if applicable)
+node_modules/
+
