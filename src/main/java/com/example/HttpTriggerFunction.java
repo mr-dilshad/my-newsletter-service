@@ -1,6 +1,6 @@
+package com.example;
 
-
-
+import com.example.model.Subscriber;
 import com.microsoft.azure.functions.*;
 import com.microsoft.azure.functions.annotation.*;
 
@@ -12,9 +12,9 @@ import java.util.Optional;
 public class HttpTriggerFunction {
     private static final String Partition_Key = "Subscibers";
     @FunctionName("addSubscriber")
-    public HttpResponseMessage get(
+    public HttpResponseMessage post(
             @HttpTrigger(name = "postSubscriber", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.FUNCTION, route="subscribers") HttpRequestMessage<Optional<String>> request,
-            @TableOutput(name="subscriber", tableName="Subscriber", connection="AzureWebJobsStorage") OutputBinding<Subscriber> subscriber,
+            @TableOutput(name="subscriber", tableName="subscribers", connection="AzureWebJobsStorage") OutputBinding<Subscriber> subscriber,
             final ExecutionContext context) {
 
         context.getLogger().info("Processing request to save subscriber email.");

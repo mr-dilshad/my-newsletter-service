@@ -1,4 +1,5 @@
-package org.subhanstudio.savesubscribers.model;
+package com.example.model;
+
 
 public class Subscriber {
     private String PartitionKey;
